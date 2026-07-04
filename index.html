@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Member - Penawaran Terbatas</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Load FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#00c900',
+                            greenHover: '#00a600',
+                            blueText: '#2e5b99',
+                            highlight: '#fff100'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-200 font-sans text-gray-900 antialiased relative min-h-screen flex items-center justify-center py-6 sm:py-10">
+
+    <!-- Main Container -->
+    <main class="w-[94%] max-w-[480px] mx-auto bg-white shadow-2xl relative overflow-hidden rounded-2xl border border-gray-200">
+        
+        <!-- Image Header (Tabel Komisi) -->
+        <div class="w-full bg-[#0a192f]">
+            <img src="https://akses.zoomdaging.co/wp-content/uploads/2024/03/income-zoomdaging.png" 
+                 alt="Tabel Komisi Affiliate" 
+                 class="w-full h-auto object-cover"
+                 onerror="this.src='https://placehold.co/800x600/0a192f/ffffff?text=Gambar+Tabel+Komisi'; this.alt='Placeholder Tabel'">
+        </div>
+
+        <!-- Content Padding -->
+        <div class="px-5 py-8 sm:px-8">
+            
+            <!-- Notes Section -->
+            <div class="space-y-6 text-lg sm:text-[1.15rem] leading-relaxed mb-10 text-gray-800">
+                
+                <p>
+                    <span class="font-bold">NOTE :</span> Investasi member kemungkinan 
+                    <span class="text-red-600 font-bold uppercase">NAIK LAGI</span> dari 
+                    <span class="text-red-600">Rp.499.000</span> menjadi 
+                    <span class="text-red-600">Rp.699.000!</span> Amankan sekarang.
+                </p>
+
+                <p>
+                    Masukkan kupon 
+                    <span class="bg-brand-highlight font-bold px-1">"200RB"</span> 
+                    untuk menikmati potongan 200rb.
+                </p>
+
+                <p>
+                    Kupon Hangus hari 
+                    <span class="bg-brand-highlight font-bold px-1">Minggu, 5 Juli 2026 jam 24.00 WIB</span>
+                </p>
+
+            </div>
+
+            <!-- Timer Section -->
+            <div class="border-2 border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-xl p-5 mb-10 relative bg-white">
+                <h2 class="text-center text-brand-blueText font-bold text-xl sm:text-2xl mb-5 tracking-tight">
+                    Waktu semakin menipis:
+                </h2>
+                
+                <!-- Timer Flexbox -->
+                <div class="flex justify-center items-start gap-1 sm:gap-2 font-bold text-4xl sm:text-6xl tracking-tighter">
+                    
+                    <!-- Days -->
+                    <div class="flex flex-col items-center w-16 sm:w-20">
+                        <span id="val-days" class="text-black">0</span>
+                        <span class="text-[10px] sm:text-xs font-semibold text-gray-600 uppercase mt-2 tracking-widest">Days</span>
+                    </div>
+                    
+                    <span class="text-black -mt-1 sm:-mt-2">:</span>
+                    
+                    <!-- Hours -->
+                    <div class="flex flex-col items-center w-16 sm:w-20">
+                        <span id="val-hours" class="text-black">00</span>
+                        <span class="text-[10px] sm:text-xs font-semibold text-gray-600 uppercase mt-2 tracking-widest">Hours</span>
+                    </div>
+                    
+                    <span class="text-black -mt-1 sm:-mt-2">:</span>
+                    
+                    <!-- Minutes -->
+                    <div class="flex flex-col items-center w-16 sm:w-20">
+                        <span id="val-minutes" class="text-black">00</span>
+                        <span class="text-[10px] sm:text-xs font-semibold text-gray-600 uppercase mt-2 tracking-widest">Minutes</span>
+                    </div>
+                    
+                    <span class="text-black -mt-1 sm:-mt-2">:</span>
+                    
+                    <!-- Seconds (Warna Merah sesuai gambar) -->
+                    <div class="flex flex-col items-center w-16 sm:w-20">
+                        <span id="val-seconds" class="text-red-600">00</span>
+                        <span class="text-[10px] sm:text-xs font-semibold text-gray-600 uppercase mt-2 tracking-widest">Seconds</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <a href="https://akses.zoomdaging.co/aff/159/17/checkout" class="inline-flex justify-center items-center gap-2 bg-brand-green hover:bg-brand-greenHover text-white font-bold text-lg py-4 px-6 rounded-md w-[90%] max-w-[340px] transition duration-300 shadow-[0_5px_15px_rgba(0,200,0,0.4)] transform hover:scale-105 mx-auto">
+                    <i class="far fa-arrow-alt-circle-right text-xl"></i>
+                    Jadi Member Sekarang
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup target tanggal sesuai teks: Minggu, 5 Juli 2026 jam 23:00:59
+            // Format format ISO: YYYY-MM-DDTHH:mm:ss
+            const targetDate = new Date('2026-07-05T21:00:59').getTime();
+
+            function updateDisplay() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                // Jika waktu sudah habis
+                if (distance < 0) {
+                    document.getElementById('val-days').textContent = "0";
+                    document.getElementById('val-hours').textContent = "00";
+                    document.getElementById('val-minutes').textContent = "00";
+                    document.getElementById('val-seconds').textContent = "00";
+                    return;
+                }
+
+                // Kalkulasi waktu
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update DOM dengan format 2 digit (kecuali hari)
+                document.getElementById('val-days').textContent = days;
+                document.getElementById('val-hours').textContent = hours < 10 ? '0' + hours : hours;
+                document.getElementById('val-minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('val-seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+            }
+
+            // Jalankan setiap detik
+            setInterval(updateDisplay, 1000);
+            updateDisplay(); // Panggilan pertama agar tidak delay 1 detik
+        });
+    </script>
+</body>
+</html>
